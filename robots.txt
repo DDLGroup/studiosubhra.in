@@ -1,0 +1,72 @@
+# ==============================================================================
+# Studio Subhra (https://www.studiosubhra.in) - Robots.txt
+# High-End Designer Fashion House by Subhra Saha
+# ==============================================================================
+
+# Search Engine Crawlers (Google, Bing, Yahoo, DuckDuckGo, Yandex, Baidu, Apple)
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /assets/
+Allow: /collections
+Allow: /ready-to-wear
+Allow: /about
+Allow: /lookbook
+Allow: /contact
+
+# Disallow Private & System Files
+Disallow: /*.json$
+Disallow: /*.lock$
+Disallow: /*.log$
+Disallow: /*.env*
+Disallow: /*.git*
+Disallow: /node_modules/
+Disallow: /src/
+
+# AI, LLM & Conversational Agents (SearchGPT, Claude, Gemini, Perplexity, etc.)
+# Fully allow AI search discovery for Studio Subhra brand and collections
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Block Vulnerability Scanners & Malicious Harvesters
+User-agent: sqlmap
+Disallow: /
+
+User-agent: Nikto
+Disallow: /
+
+User-agent: wpscan
+Disallow: /
+
+User-agent: Havij
+Disallow: /
+
+# Sitemaps
+Sitemap: https://www.studiosubhra.in/sitemap.xml

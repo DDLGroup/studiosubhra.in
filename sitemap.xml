@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 1. Home Page -->
+  <url>
+    <loc>https://www.studiosubhra.in/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/hero/slider0.jpg</image:loc>
+      <image:title>Studio Subhra - Wear the Next You Haute Couture</image:title>
+      <image:caption>Avant-garde luxury fashion and sculptural drapery by Subhra Saha</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/logo.png</image:loc>
+      <image:title>Studio Subhra Official Brand Logo</image:title>
+      <image:caption>Studio Subhra - Set the Trend Luxury Fashion House</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/denim/denim1.jpg</image:loc>
+      <image:title>Studio Subhra Signature Denim Saree</image:title>
+      <image:caption>Desi Heritage Meets Global Attitude - Denim Saree Collection</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/dreams/dreams1.jpg</image:loc>
+      <image:title>Studio Subhra Inspiration Origami Haute Couture</image:title>
+      <image:caption>Nature x Origami x Fashion Sculptural Pleated Ensemble</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/knit/knit1.jpg</image:loc>
+      <image:title>Studio Subhra Knit Concept Saree</image:title>
+      <image:caption>Traditional Roots Modern Twist - Knit Concept Saree</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 2. Collections Page -->
+  <url>
+    <loc>https://www.studiosubhra.in/collections</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/denim/denim1.jpg</image:loc>
+      <image:title>Denim Saree Collection</image:title>
+      <image:caption>Contemporary reimagination of the Indian saree crafted with denim textures</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/dreams/dreams1.jpg</image:loc>
+      <image:title>Inspiration Origami Collection</image:title>
+      <image:caption>Sculptural pleats and organic architectural draping inspired by origami</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/designer-pret/pret1.jpg</image:loc>
+      <image:title>Designer Prêt Collection</image:title>
+      <image:caption>Everyday couture and contemporary luxury silhouettes</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/knit/knit1.jpg</image:loc>
+      <image:title>Knit Concept Saree</image:title>
+      <image:caption>Flexible knit drapery redefining comfort and haute couture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/arriving-soon/arriving1.jpg</image:loc>
+      <image:title>Arriving Soon Campaign</image:title>
+      <image:caption>Upcoming fashion week and runway collections</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 3. Ready to Wear Page -->
+  <url>
+    <loc>https://www.studiosubhra.in/ready-to-wear</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/ready-to-wear/rtw1.jpg</image:loc>
+      <image:title>Studio Subhra Ready to Wear Look 1</image:title>
+      <image:caption>Prêt-à-Porter contemporary draped silhouette</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/ready-to-wear/rtw2.jpg</image:loc>
+      <image:title>Studio Subhra Ready to Wear Look 2</image:title>
+      <image:caption>Sculptural pleated co-ord set</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/ready-to-wear/rtw3.jpg</image:loc>
+      <image:title>Studio Subhra Ready to Wear Look 3</image:title>
+      <image:caption>Avant-garde drape ensemble</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/ready-to-wear/rtw4.jpg</image:loc>
+      <image:title>Studio Subhra Ready to Wear Look 4</image:title>
+      <image:caption>Modern heritage fusion drape</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 4. About Page (Subhra Saha) -->
+  <url>
+    <loc>https://www.studiosubhra.in/about</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/about.jpeg</image:loc>
+      <image:title>Subhra Saha - Fashion Designer, Lecturer, Consultant</image:title>
+      <image:caption>Founder and creative director Subhra Saha at Studio Subhra</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 5. Lookbook Page -->
+  <url>
+    <loc>https://www.studiosubhra.in/lookbook</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.studiosubhra.in/images/hero/slider1.jpg</image:loc>
+      <image:title>Studio Subhra Visual Lookbook</image:title>
+      <image:caption>Editorial fashion photoshoot lookbook and couture portfolio</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 6. Contact Page -->
+  <url>
+    <loc>https://www.studiosubhra.in/contact</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

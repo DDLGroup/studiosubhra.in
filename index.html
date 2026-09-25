@@ -2,49 +2,158 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/images/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.studiosubhra.in/" />
 
-    <!-- Security Headers -->
+    <!-- Favicon & PWA App Icons -->
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0d0d0d" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Studio Subhra" />
+
+    <!-- Security Headers (HTML Fallback) -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' ws: wss:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' ws: wss: http: https:; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https: wss: ws:; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; base-uri 'self'; form-action 'self';" />
 
     <!-- SEO Meta Tags -->
     <title>Studio Subhra | Set the Trend — By Subhra Saha</title>
-    <meta name="description" content="Studio Subhra by Subhra Saha — Origami-inspired fashion, innovative denim sarees, and knit concept designs. Desi Heritage. Global Attitude. Set the Trend." />
-    <meta name="keywords" content="Studio Subhra, Subhra Saha, designer saree, denim saree, knit saree, origami fashion, Indian fashion designer, Kolkata fashion, set the trend" />
-    <meta name="author" content="Studio Subhra" />
-    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Studio Subhra by Subhra Saha — High-end Indian designer fashion house. Discover iconic Denim Sarees, sculptural Inspiration Origami collections, Knit Concept Sarees, and contemporary Designer Prêt. Set the Trend." />
+    <meta name="keywords" content="Studio Subhra, Subhra Saha, designer saree, denim saree, knit saree, origami fashion, ready to wear, designer pret, haute couture Kolkata, Indian fashion designer, set the trend" />
+    <meta name="author" content="Studio Subhra - Subhra Saha" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Studio Subhra | Set the Trend" />
-    <meta property="og:description" content="I don't sell products. I sell my dreams. — Origami-inspired fashion by Subhra Saha" />
-    <meta property="og:image" content="/images/hero/slider0.jpg" />
+    <!-- Geographical / Local SEO Meta Tags (Kolkata, West Bengal, India) -->
+    <meta name="geo.region" content="IN-WB" />
+    <meta name="geo.placename" content="Kolkata" />
+    <meta name="geo.position" content="22.5726;88.3639" />
+    <meta name="ICBM" content="22.5726, 88.3639" />
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:site_name" content="Studio Subhra" />
+    <meta property="og:locale" content="en_IN" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.studiosubhra.in" />
+    <meta property="og:url" content="https://www.studiosubhra.in/" />
+    <meta property="og:title" content="Studio Subhra | Set the Trend — By Subhra Saha" />
+    <meta property="og:description" content="I don't sell products. I sell my dreams. — Haute couture, iconic Denim Sarees, and sculptural Origami fashion by Subhra Saha." />
+    <meta property="og:image" content="https://www.studiosubhra.in/images/hero/slider0.jpg" />
+    <meta property="og:image:secure_url" content="https://www.studiosubhra.in/images/hero/slider0.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Studio Subhra Haute Couture by Subhra Saha" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Studio Subhra | Set the Trend" />
-    <meta name="twitter:description" content="Origami-inspired fashion, denim sarees & knit concepts by Subhra Saha" />
-    <meta name="twitter:image" content="/images/hero/slider0.jpg" />
+    <meta name="twitter:site" content="@studiosubhra" />
+    <meta name="twitter:creator" content="@studiosubhra" />
+    <meta name="twitter:title" content="Studio Subhra | Set the Trend — By Subhra Saha" />
+    <meta name="twitter:description" content="Origami-inspired fashion, iconic denim sarees & knit concept couture by Subhra Saha." />
+    <meta name="twitter:image" content="https://www.studiosubhra.in/images/hero/slider0.jpg" />
+    <meta name="twitter:image:alt" content="Studio Subhra Fashion Collection" />
 
-    <!-- Google Fonts Preconnect -->
+    <!-- Google Fonts Preconnect & Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet" />
 
-    <!-- Preload critical hero image -->
-    <link rel="preload" as="image" href="/images/hero/slider0.jpg" />
-    <script type="module" crossorigin src="/assets/index-DjBElxUo.js"></script>
+    <!-- Preload Critical Hero Image with High Fetch Priority -->
+    <link rel="preload" as="image" href="/images/hero/slider0.jpg" fetchpriority="high" />
+
+    <!-- Base JSON-LD Structured Data Schema (Organization, FashionBrand, WebSite & Person) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["FashionBrand", "ClothingStore", "Organization"],
+          "@id": "https://www.studiosubhra.in/#organization",
+          "name": "Studio Subhra",
+          "alternateName": "Studio Subhra by Subhra Saha",
+          "url": "https://www.studiosubhra.in/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.studiosubhra.in/images/logo.png",
+            "caption": "Studio Subhra Brand Logo"
+          },
+          "image": "https://www.studiosubhra.in/images/hero/slider0.jpg",
+          "description": "High-end Indian designer fashion house founded by Subhra Saha. Renowned for innovative Denim Sarees, Inspiration Origami collections, Knit Concept Sarees, and contemporary Designer Prêt.",
+          "slogan": "Set the Trend",
+          "founder": {
+            "@type": "Person",
+            "@id": "https://www.studiosubhra.in/#founder",
+            "name": "Subhra Saha",
+            "jobTitle": "Fashion Designer, Lecturer, Consultant",
+            "description": "Visionary fashion designer, academic lecturer, and design consultant exploring the harmony between sculptural folds, flowing drapes, and modern textiles.",
+            "image": "https://www.studiosubhra.in/images/about.jpeg"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Studio Subhra, Salt Lake",
+            "addressLocality": "Kolkata",
+            "addressRegion": "West Bengal",
+            "postalCode": "700091",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "22.5726",
+            "longitude": "88.3639"
+          },
+          "telephone": "+91-99030-24696",
+          "email": "subhraonly@yahoo.co.in",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+91-99030-24696",
+              "contactType": "customer service",
+              "availableLanguage": ["English", "Bengali", "Hindi"],
+              "areaServed": "IN"
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+91-98756-29283",
+              "contactType": "sales",
+              "contactOption": "HearingImpairedSupported",
+              "availableLanguage": ["English", "Bengali", "Hindi"],
+              "areaServed": "Worldwide"
+            }
+          ],
+          "sameAs": [
+            "https://facebook.com/studiosubhra",
+            "https://instagram.com/studiosubhra",
+            "https://youtube.com/@studiosubhra",
+            "https://pinterest.com/studiosubhra"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.studiosubhra.in/#website",
+          "url": "https://www.studiosubhra.in/",
+          "name": "Studio Subhra",
+          "description": "Studio Subhra - Set the Trend | Haute Couture by Subhra Saha",
+          "publisher": {
+            "@id": "https://www.studiosubhra.in/#organization"
+          },
+          "inLanguage": "en-IN"
+        }
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/index-BmvQQx99.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-Bu1CPCjB.js">
     <link rel="modulepreload" crossorigin href="/assets/animations-J-haffv9.js">
     <link rel="stylesheet" crossorigin href="/assets/index-CfW_y1rc.css">
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run Studio Subhra website.</noscript>
+    <noscript>You need to enable JavaScript to experience the Studio Subhra haute couture showcase.</noscript>
     <div id="root"></div>
   </body>
 </html>
