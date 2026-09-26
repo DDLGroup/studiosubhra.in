@@ -1,0 +1,138 @@
+.home {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: var(--z-base, 1);
+}
+
+.dividerGold {
+  height: 2px;
+  background-color: var(--color-gold);
+  width: 100px;
+  margin: var(--space-md) auto;
+}
+
+/* Brand Statement */
+.brandStatement {
+  background-color: var(--color-cream);
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  color: var(--color-charcoal);
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.attribution {
+  font-family: var(--font-cursive);
+  font-size: var(--fs-h4);
+  color: var(--color-charcoal);
+  margin-top: var(--space-sm);
+}
+
+/* Collections Grid */
+.collectionsSection {
+  padding: var(--space-2xl) var(--space-xl);
+  background-color: var(--color-offwhite);
+}
+
+
+
+/* ============================================
+   Luxury Decorative Transition Separator
+   ============================================ */
+.sectionSeparator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  background-color: var(--color-cream, #FAF7F2);
+}
+
+.sepLine {
+  height: 1px;
+  width: 120px;
+  background: linear-gradient(to right, transparent, rgba(196, 149, 106, 0.5));
+}
+
+.sectionSeparator .sepLine:last-child {
+  background: linear-gradient(to left, transparent, rgba(196, 149, 106, 0.5));
+}
+
+.sepDiamond {
+  color: var(--color-gold, #C4956A);
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+}
+
+/* ============================================
+   Founder Spotlight — Distinct Museum Gallery Style
+   ============================================ */
+.founderSection {
+  padding: 2rem 2rem 7rem;
+  background-color: var(--color-cream, #FAF7F2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.founderReveal {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.founderBannerWrapper {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22), 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(196, 149, 106, 0.4);
+  background: #0A0A0A;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.founderBannerWrapper:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-gold, #C4956A);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.founderBannerImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .founderSection {
+    padding: 1rem 1rem 5rem;
+  }
+
+  .founderBannerWrapper {
+    border-radius: 6px;
+  }
+}

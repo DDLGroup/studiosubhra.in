@@ -1,0 +1,11 @@
+.scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--color-gold), #e0c897);
+  background: linear-gradient(to right, var(--color-gold), var(--color-gold-light, #e4cd9b));
+  z-index: var(--z-top, 9999);
+  transition: width 0.1s ease-out;
+  pointer-events: none;
+}

@@ -1,0 +1,274 @@
+/* ============================================
+   KEYFRAME ANIMATIONS — Studio Subhra
+   Each section uses a unique animation type
+   ============================================ */
+
+/* 1. Fade In Up — Brand statement */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Fade In Down */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3. Slide In Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 4. Slide In Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 5. Scale Reveal — Gallery items */
+@keyframes scaleReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 6. Origami Fold — Paper unfold animation */
+@keyframes origamiFold {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(90deg);
+    transform-origin: top center;
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg);
+    transform-origin: top center;
+  }
+}
+
+/* 7. 3D Flip Card */
+@keyframes flipCardIn {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) rotateY(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1200px) rotateY(0deg);
+  }
+}
+
+/* 8. Blur In — Designer quote */
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* 9. Ken Burns Zoom — Hero slider */
+@keyframes kenBurns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* 10. Shimmer — Loading */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* 11. Pulse — Logo loader */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+}
+
+/* 12. Draw Line — Decorative gold line */
+@keyframes drawLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+/* 13. Rotate In — Social icons */
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: perspective(600px) rotateY(-90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(600px) rotateY(0deg);
+  }
+}
+
+/* 14. Curtain Reveal — Page transitions */
+@keyframes curtainReveal {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* 15. Float — Subtle floating effect */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 16. Spin Slow — Decorative elements */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 17. Mobile Menu 3D Open */
+@keyframes menuOpen3D {
+  from {
+    transform: perspective(1200px) rotateY(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(1200px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+/* 18. Mobile Menu 3D Close */
+@keyframes menuClose3D {
+  from {
+    transform: perspective(1200px) rotateY(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: perspective(1200px) rotateY(-90deg);
+    opacity: 0;
+  }
+}
+
+/* 19. Stagger Children helper */
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 20. Mask Reveal — Circular */
+@keyframes circularReveal {
+  from {
+    clip-path: circle(0% at 50% 50%);
+  }
+  to {
+    clip-path: circle(75% at 50% 50%);
+  }
+}
+
+/* Utility Animation Classes */
+.animate-fade-up {
+  animation: fadeInUp var(--duration-slow) var(--ease-out) forwards;
+}
+
+.animate-fade-down {
+  animation: fadeInDown var(--duration-slow) var(--ease-out) forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft var(--duration-slow) var(--ease-out) forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight var(--duration-slow) var(--ease-out) forwards;
+}
+
+.animate-scale {
+  animation: scaleReveal var(--duration-slow) var(--ease-out) forwards;
+}
+
+.animate-origami {
+  animation: origamiFold var(--duration-slower) var(--ease-out) forwards;
+}
+
+.animate-flip {
+  animation: flipCardIn var(--duration-slower) var(--ease-out) forwards;
+}
+
+.animate-blur {
+  animation: blurIn var(--duration-slower) var(--ease-out) forwards;
+}
+
+.animate-rotate-in {
+  animation: rotateIn var(--duration-slow) var(--ease-out) forwards;
+}
+
+/* Initial hidden state for scroll-triggered elements */
+.reveal-hidden {
+  opacity: 0;
+}

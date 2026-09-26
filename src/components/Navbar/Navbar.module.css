@@ -1,0 +1,212 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 100;
+  transition: background-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0.25) 60%, transparent 100%);
+}
+
+.scrolled {
+  background: var(--color-cream) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.logo img {
+  height: 45px;
+  display: block;
+}
+
+.desktopNav {
+  display: flex;
+  gap: 32px;
+}
+
+.navLink {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  color: var(--color-white);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.scrolled .navLink {
+  color: var(--color-charcoal);
+  text-shadow: none;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after,
+.navLink.active::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  padding: 10px;
+}
+
+.hamburgerLine {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-white);
+  margin: 5px 0;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.scrolled .hamburgerLine {
+  background-color: var(--color-charcoal);
+}
+
+.closeButton {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.closeLine {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-cream);
+  position: absolute;
+}
+
+.closeLine:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.closeLine:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(20px);
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* 3D animation setup */
+  transform-origin: left center;
+  transform: perspective(1200px) rotateY(-90deg);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease, visibility 0.6s;
+}
+
+.mobileMenuOverlay.open {
+  transform: perspective(1200px) rotateY(0deg);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileNavList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.mobileNavItem {
+  transform: translateX(40px);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+}
+
+.mobileMenuOverlay.open .mobileNavItem {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Stagger for items */
+.mobileMenuOverlay.open .mobileNavItem:nth-child(1) { transition-delay: 0.1s; }
+.mobileMenuOverlay.open .mobileNavItem:nth-child(2) { transition-delay: 0.2s; }
+.mobileMenuOverlay.open .mobileNavItem:nth-child(3) { transition-delay: 0.3s; }
+.mobileMenuOverlay.open .mobileNavItem:nth-child(4) { transition-delay: 0.4s; }
+.mobileMenuOverlay.open .mobileNavItem:nth-child(5) { transition-delay: 0.5s; }
+.mobileMenuOverlay.open .mobileNavItem:nth-child(6) { transition-delay: 0.6s; }
+
+.mobileNavLink {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-cream);
+  text-decoration: none;
+  position: relative;
+}
+
+.mobileNavLink.active {
+  color: var(--color-gold);
+}
+
+.mobileNavLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-gold);
+  transition: width 0.3s ease;
+}
+
+.mobileNavLink.active::after {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .desktopNav {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .navbar {
+    padding: 0 20px;
+  }
+}

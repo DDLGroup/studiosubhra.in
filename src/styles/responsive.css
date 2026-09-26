@@ -1,0 +1,165 @@
+/* ============================================
+   RESPONSIVE BREAKPOINTS — Studio Subhra
+   Mobile-first approach
+   ============================================ */
+
+/* Extra Small: 320px - 479px (small phones) */
+@media (max-width: 479px) {
+  :root {
+    --nav-height: 60px;
+    --container-padding: 1rem;
+  }
+
+  .section-padding {
+    padding: var(--space-lg) var(--container-padding);
+  }
+
+  .hero-text {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .hide-mobile-xs {
+    display: none !important;
+  }
+}
+
+/* Small: 480px - 767px (large phones) */
+@media (min-width: 480px) and (max-width: 767px) {
+  :root {
+    --nav-height: 65px;
+    --container-padding: 1.5rem;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium: 768px - 1023px (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --nav-height: 70px;
+    --container-padding: 2rem;
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large: 1024px - 1279px (small desktops) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Extra Large: 1280px - 1439px */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Ultra Wide: 1440px+ */
+@media (min-width: 1440px) {
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile Navigation — show hamburger below 1024px */
+@media (max-width: 1023px) {
+  .nav-desktop {
+    display: none !important;
+  }
+
+  .nav-hamburger {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-desktop {
+    display: flex !important;
+  }
+
+  .nav-hamburger {
+    display: none !important;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .hover-effect {
+    transform: none !important;
+  }
+
+  .cursor-follower {
+    display: none !important;
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .nav,
+  .footer,
+  .loader,
+  .scroll-progress {
+    display: none !important;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+  }
+}

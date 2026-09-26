@@ -1,0 +1,74 @@
+.loaderContainer {
+  position: fixed;
+  inset: 0;
+  background-color: #ffffff;
+  z-index: var(--z-loader, 10000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.loaderContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 540px;
+  width: 100%;
+}
+
+.imageCard {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: elegantFade 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.preloaderImage {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.progressTrack {
+  width: 160px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressBar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #c4956a, #d4af37, #c4956a);
+  animation: progressFill 1.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  transform-origin: left;
+}
+
+@keyframes elegantFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes progressFill {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(0.7);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}

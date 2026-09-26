@@ -1,0 +1,250 @@
+.collectionsPage {
+  width: 100%;
+  background-color: var(--color-offwhite);
+  overflow-x: hidden;
+}
+
+/* Hero Banner */
+.heroBanner {
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroOverlay {
+  background-color: rgba(10, 10, 10, 0.4);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: var(--fs-hero);
+  color: var(--color-offwhite);
+  margin-bottom: var(--space-sm);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.heroSubtitle {
+  font-family: var(--font-cursive);
+  font-size: var(--fs-h3);
+  color: var(--color-gold);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid Section */
+.gridSection {
+  padding: 5rem 2rem;
+  background-color: var(--color-cream, #FAF7F2);
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3.5rem;
+}
+
+.categoryLabel {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold, #C4956A);
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  padding: 0.3rem 1rem;
+  border: 1px solid var(--color-gold, #C4956A);
+  border-radius: 2px;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading, serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+  color: var(--color-black, #0A0A0A);
+  margin-bottom: 0.5rem;
+}
+
+.dividerGold {
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-gold, #C4956A);
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-body, serif);
+  font-size: 1.15rem;
+  color: var(--color-gray-dark, #444);
+  line-height: 1.6;
+}
+
+.collectionsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1280px) {
+  .collectionsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .collectionsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .collectionsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 360px;
+  }
+
+  .gridSection {
+    padding: 3.5rem 1rem;
+  }
+}
+
+/* Inquiry Section */
+.inquirySection {
+  padding: 5rem 2rem 7rem;
+  background-color: var(--color-cream, #FAF7F2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inquiryCard {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background: #ffffff;
+  padding: 4.5rem 3rem;
+  border-radius: 6px;
+  border: 1px solid rgba(196, 149, 106, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+}
+
+.inquiryTag {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold, #C4956A);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.inquiryTitle {
+  font-family: var(--font-heading, serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: var(--color-black, #0A0A0A);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.inquiryDesc {
+  font-family: var(--font-body, serif);
+  font-size: 1.15rem;
+  color: var(--color-charcoal, #333333);
+  line-height: 1.8;
+  max-width: 680px;
+  margin: 1.5rem auto 2.5rem;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.contactBtn {
+  display: inline-block;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: var(--color-black, #0A0A0A);
+  padding: 0.95rem 2.4rem;
+  border-radius: 2px;
+  border: 1px solid var(--color-black, #0A0A0A);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contactBtn:hover {
+  background-color: var(--color-gold, #C4956A);
+  border-color: var(--color-gold, #C4956A);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(196, 149, 106, 0.3);
+}
+
+.lookbookBtn {
+  display: inline-block;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-black, #0A0A0A);
+  background-color: transparent;
+  padding: 0.95rem 2.4rem;
+  border-radius: 2px;
+  border: 1px solid var(--color-black, #0A0A0A);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.lookbookBtn:hover {
+  background-color: var(--color-black, #0A0A0A);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .inquirySection {
+    padding: 3rem 1rem 5rem;
+  }
+
+  .inquiryCard {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .inquiryTitle {
+    font-size: 1.8rem;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contactBtn,
+  .lookbookBtn {
+    width: 100%;
+    text-align: center;
+  }
+}
