@@ -1,0 +1,157 @@
+# ==============================================================================
+# Studio Subhra (https://www.studiosubhra.in)
+# Production-Grade Apache Configuration: Security, SEO & Performance
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. CORE SERVER HARDENING & SECURITY FIREWALL
+# ------------------------------------------------------------------------------
+
+# Disable directory browsing & multi-views
+Options -Indexes -MultiViews
+
+# Conceal server signatures & version details
+ServerSignature Off
+
+# Limit allowed HTTP request methods to legitimate operations
+<LimitExcept GET POST HEAD OPTIONS>
+    Require all denied
+</LimitExcept>
+
+# Block access to hidden directories, sensitive source files, and configs
+<FilesMatch "(^\.|\.(env|git|svn|hg|lock|bak|config|sql|sh|log|ini|md|yml|yaml))$">
+    Require all denied
+</FilesMatch>
+
+# Explicitly allow standard public root manifests & text files
+<FilesMatch "^(robots\.txt|sitemap\.xml|llms\.txt|llms-full\.txt|site\.webmanifest)$">
+    Require all granted
+</FilesMatch>
+
+# ------------------------------------------------------------------------------
+# 2. HTTP SECURITY HEADERS (ZERO EXPLOIT VULNERABILITY)
+# ------------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    # HTTP Strict Transport Security (HSTS) - 1 Year with Subdomains & Preload
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # Clickjacking Protection - Disallow unauthorized iframing
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Prevent MIME-Sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Cross-Site Scripting (XSS) Legacy Protection
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Referrer Information Protection
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions-Policy - Disable invasive hardware APIs
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()"
+
+    # Content-Security-Policy (CSP)
+    Header set Content-Security-Policy "default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https: wss: ws:; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-ancestors 'self';"
+
+    # Strip identifying headers
+    Header unset X-Powered-By
+    Header unset Server
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 3. REWRITE ENGINE: HTTPS, CANONICAL DOMAIN & FIREWALL FILTERS
+# ------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Block Malicious Exploits, SQL Injection, and Path Traversal
+    RewriteCond %{QUERY_STRING} (union.*select|insert.*into|drop.*table|group_concat|benchmark|waitfor.*delay|sleep\() [NC,OR]
+    RewriteCond %{QUERY_STRING} (cast\(|md5\(|sha1\(|concat\(|0x[0-9a-f]+) [NC,OR]
+    RewriteCond %{QUERY_STRING} (/\*|\*/|--|char\(|alert\(|<script|javascript:|vbscript:) [NC,OR]
+    RewriteCond %{QUERY_STRING} (base64_encode|base64_decode|eval\(|system\(|passthru\() [NC,OR]
+    RewriteCond %{QUERY_STRING} (\.\./|\.\.\\|/etc/passwd|/boot\.ini|win\.ini) [NC,OR]
+    RewriteCond %{QUERY_STRING} (=(https?|ftp|file)://|\b(include|require|file_get_contents)\b) [NC]
+    RewriteRule .* - [F,L]
+
+    # Block Vulnerability Scanners, Exploit Bots and Malicious User Agents
+    RewriteCond %{HTTP_USER_AGENT} (sqlmap|nikto|wpscan|havij|acunetix|masscan|zgrab|nmap|nessus|openvas|dirbuster|morfeus|fuzz) [NC]
+    RewriteRule .* - [F,L]
+
+    # Force HTTPS Protocol
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Enforce Canonical Domain (https://www.studiosubhra.in)
+    RewriteCond %{HTTP_HOST} ^studiosubhra\.in$ [NC]
+    RewriteRule ^(.*)$ https://www.studiosubhra.in/$1 [L,R=301]
+
+    # Remove trailing index.html for clean canonical URLs
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.html\ HTTP/
+    RewriteRule ^(.*)index\.html$ https://www.studiosubhra.in/$1 [R=301,L]
+
+    # SPA (Single Page Application) HTML5 History Mode Fallback
+    # If the requested resource does not exist as a physical file or folder, route to index.html
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.html [L]
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 4. GZIP / DEFLATE COMPRESSION (CORE WEB VITALS OPTIMIZATION)
+# ------------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/woff
+    AddOutputFilterByType DEFLATE font/woff2
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 5. BROWSER CACHE CONTROL (HIGH-SPEED ASSET DELIVERY)
+# ------------------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML, Sitemaps & Dynamic Data: Revalidate frequently
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType text/xml "access plus 0 seconds"
+    ExpiresByType application/xml "access plus 0 seconds"
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType text/plain "access plus 0 seconds"
+
+    # Static CSS and JavaScript (Hashed in production)
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+
+    # Images & Media
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Web Fonts
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+</IfModule>
+
+# Custom Error Documents (handled gracefully by SPA index.html)
+ErrorDocument 403 /index.html
+ErrorDocument 404 /index.html
